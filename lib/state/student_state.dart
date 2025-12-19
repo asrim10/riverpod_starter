@@ -1,0 +1,20 @@
+import 'package:riverpod_starter/models/student_model.dart';
+
+class StudentState {
+  final bool isLoading;
+  final List<StudentModel> lstStudents;
+  StudentState({this.isLoading = false, this.lstStudents = const []});
+
+  //Stare lai change garira xam tara sabai lai hoinw
+  //copywith
+  StudentState copyWith({bool? isLoading, List<StudentModel>? lstStudents}) {
+    return StudentState(
+      isLoading: isLoading ?? this.isLoading,
+      lstStudents: lstStudents ?? this.lstStudents,
+    );
+  }
+}
+
+//false, []
+//true, []
+//false ,["asd"]

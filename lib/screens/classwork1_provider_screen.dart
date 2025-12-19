@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 
+final appbarProvider = StateProvider<String>((ref) {
+  return "Classwork 1";
+});
 final resultProvider = StateProvider<double>((ref) {
   return 0;
 });
@@ -48,7 +51,7 @@ class _Classwork1ProviderScreenState
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Classwork 1 - Provider',
+                      ref.read(appbarProvider),
                       style: Theme.of(context).textTheme.headlineSmall
                           ?.copyWith(
                             color: Colors.white,
